@@ -11,18 +11,13 @@ function App() {
     <div>
        <BrowserRouter>
            <Routes>
-            <Route index path='' element={<Home/>}/>
+            {/* <Route index path='/' element={<Home/>}/> */}
             <Route path='/' element={<Home/>}/>
             <Route path='/projects' element={<Projects/>}/>
             <Route path='/contact' element={<Contact/>}/>
             <Route path="*" element={<Error/>}/>
             </Routes>
        </BrowserRouter>
-       {/* <Home/>
-       <Navbar/>
-       <Home/>
-       <Projects/>
-       <Contact/> */}
   </div>
   )
 }

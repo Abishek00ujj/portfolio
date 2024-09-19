@@ -5,6 +5,7 @@ export const Projects = () => {
   return (
     <div>
         <Navbar />
+        <div className="">Projects</div>
     </div>
   )
 }

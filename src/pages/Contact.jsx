@@ -4,5 +4,8 @@ import { Navbar } from '../components/Navbar'
 export const Contact=() => (
   <div>
         <Navbar />
+        <div className="">
+          Contact
+        </div>
   </div>
 )
