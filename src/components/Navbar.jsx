@@ -1,14 +1,12 @@
 import { User2 } from 'lucide-react'
 import React from 'react'
-import { Projects } from '../pages/Projects'
-import { Contact } from '../pages/Contact'
 import {Link} from 'react-router-dom'
 export const Navbar = () => {
     return (
         <>
-            <div className='w-full h-[4rem] bg-slate-800 flex justify-between p-5'>
+            <div className='w-full h-[4rem] bg-slate-800 flex justify-between p-5 sticky'>
                 <div className='w-[50%]'>
-                    <h1 className='font-mono text-blue-50 font-bold text-2xl pb-15 pl-10'>ABISHEK S</h1>
+                    <h1 className='font-mono text-blue-50 font-bold text-2xl pb-15 pl-10'>Portfolio</h1>
                 </div>
                 <div className='font-serif text-white  w-1/2 h-[4rem]'>
                     <ul className='flex'>

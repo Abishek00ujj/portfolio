@@ -1,5 +1,4 @@
 import {Home} from './pages/Home'
-import {Navbar} from './components/Navbar'
 import {BrowserRouter,Route,Routes} from 'react-router-dom'
 import { Projects } from './pages/Projects'
 import { Contact } from './pages/Contact'
