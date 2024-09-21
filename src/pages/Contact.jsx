@@ -6,7 +6,7 @@ export const Contact = () => {
     <Navbar/>
     <div className="flex flex-col items-center justify-center w-screen h-screen">
     <form className="flex flex-col items-center justify-center p-10 border bg-slate-100 rounded-xl">
-            <h3 className=''>Get in touch with me</h3>
+            <h3 className='font-serif text-black-400 text-2xl pb-10'>Get in touch with me!</h3>
             <input className="border-2 border-solid border-purple-600 p-2.5 mb-10 rounded-md placeholder-slate-500" type="text" placeholder="NAME"/>
             <input className="border-2 p-2.5 mb-10 rounded-md border-purple-600 placeholder-slate-500" type="text" placeholder="EMAIL"/>
             <textarea className="border-2 p-2.5 mb-10 rounded-md border-purple-600 placeholder-slate-500" type="" placeholder="COMMENTS"/>

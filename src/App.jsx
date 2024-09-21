@@ -3,17 +3,17 @@ import {BrowserRouter,Route,Routes} from 'react-router-dom'
 import { Projects } from './pages/Projects'
 import { Contact } from './pages/Contact'
 import { Error } from './pages/Error'
-
+import { Blogs } from './pages/Blogs'
 function App() {
 
   return (
     <div>
        <BrowserRouter>
            <Routes>
-            {/* <Route index path='/' element={<Home/>}/> */}
-            <Route path='/' element={<Home/>}/>
+            <Route index path='/' element={<Home/>}/>
             <Route path='/projects' element={<Projects/>}/>
             <Route path='/contact' element={<Contact/>}/>
+            <Route path='/blogs' element={<Blogs/>}/>
             <Route path="*" element={<Error/>}/>
             </Routes>
        </BrowserRouter>

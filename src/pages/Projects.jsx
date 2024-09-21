@@ -11,7 +11,7 @@ export const Projects = () => {
     <div>
         <Navbar />
         <div className="">
-          <p className='font-serif text-3xl text-white'>JAVA</p>
+          <p className='font-serif text-3xl text-orange-400'>JAVA</p>
           <div className='flex w-full overflow-scroll'>
           <Procomponent img={headsortailspro} name={"Heads or Tails App-Java"} link={"https://github.com/Abishek00ujj/Heads-or-Tails-APP-using-JAVA"}/>
           <Procomponent img={libpro} name={"Library management system-JAVA , Postgres"} link={"https://github.com/Abishek00ujj/Library-management-system-Java-"}/>
@@ -20,13 +20,19 @@ export const Projects = () => {
           <Procomponent img={calc} name={"Calculator (Math,Science)-JAVA"} link={"https://github.com/Abishek00ujj/Conatact-management-system-ConsoleBased"}/>
           
           </div>
-          <p className='font-serif text-3xl text-white'>JAVA SCRIPT</p>
+          <p className='font-serif text-3xl text-orange-400'>JAVA SCRIPT</p>
           <div className='flex w-full overflow-scroll'>
           <Procomponent img={calc} name={"Calculator (Math,Science)-JAVA"} link={"https://github.com/Abishek00ujj/Conatact-management-system-ConsoleBased"} preview={"https://github.com/Abishek00ujj/Conatact-management-system-ConsoleBased"}/>
           <Procomponent/>
           <Procomponent/>
           </div>
-          <p>JAVA</p>
+          <p className='font-serif text-3xl text-orange-400'>REACT</p>
+          <div className='flex w-full overflow-scroll'>
+          <Procomponent/>
+          <Procomponent/>
+          <Procomponent/>
+          </div>
+          <p className='font-serif text-3xl text-orange-400'>FRONT-END</p>
           <div className='flex w-full overflow-scroll'>
           <Procomponent/>
           <Procomponent/>

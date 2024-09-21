@@ -2,7 +2,8 @@ import React from 'react'
 import errorImg from '../assets/img/errorImg.gif'
 export const Error = () => {
   return (
-    <div className='w-screen h-screen flex justify-center items-center bg-f5f5f5'>
+    <>
+    <div className='w-screen h-screen flex justify-center items-center bg-f5f5f5 bg-white'>
         <div>
         <img className='w-[100%] h-[100%]'src={errorImg} alt='error404'/>
         </div>
@@ -12,5 +13,6 @@ export const Error = () => {
         <p className='text-lg'>Error code: 404</p>
         </div>
     </div>
+    </>
   )
 }

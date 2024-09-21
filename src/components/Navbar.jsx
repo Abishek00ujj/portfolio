@@ -1,7 +1,11 @@
 import { User2 } from 'lucide-react'
+import {useState} from 'react'
 import React from 'react'
 import {Link} from 'react-router-dom'
+import  Modal  from 'react-modal'
+Modal.setAppElement('#root');
 export const Navbar = () => {
+    const [visible,setvisible]=useState(false)
     return (
         <>
             <div className='w-full h-[4rem] bg-slate-800 flex justify-between p-5 sticky'>
@@ -17,12 +21,15 @@ export const Navbar = () => {
                         <Link to={'/projects'}>Project</Link>
                         </li>
                         <li className='mr-7  hover:text-yellow-400'>
+                        <Link to={'/blogs'}>Blogs</Link>
+                        </li>
+                        <li className='mr-7  hover:text-yellow-400'>
                         <Link to={'/contact'}>Contact</Link>
                         </li>
                     </ul>
                 </div>
                 <div>
-                    <User2 className='w-8 h-8  hover:text-yellow-400 text-white rounded-xl border-2 border-white'></User2>
+                    <User2 className='w-8 h-8  hover:text-yellow-400 text-white rounded-xl border-2 border-white' onClick={()=>setvisible(true)}/>
                 </div>
             </div>
         </>
