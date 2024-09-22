@@ -4,6 +4,7 @@ import { Projects } from './pages/Projects'
 import { Contact } from './pages/Contact'
 import { Error } from './pages/Error'
 import { Blogs } from './pages/Blogs'
+import {Admin} from './pages/Admin'
 function App() {
 
   return (
@@ -15,6 +16,7 @@ function App() {
             <Route path='/contact' element={<Contact/>}/>
             <Route path='/blogs' element={<Blogs/>}/>
             <Route path="*" element={<Error/>}/>
+            <Route path="/admin" element={<Admin/>}/>
             </Routes>
        </BrowserRouter>
   </div>
