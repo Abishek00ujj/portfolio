@@ -4,6 +4,8 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 import {X} from 'lucide-react'
 export const Navbar = () => {
+    const id=7;
+    const pass=1234;
     const [visible,setvisible]=useState(false)
     return (
         <>
@@ -33,15 +35,19 @@ export const Navbar = () => {
             </div>
             {
                 visible && (
-                    <div className='top-1/2 left-1/2 fixed'>
-                    <div className='fixed  w-[30vw] h-[40vh] flex-col justify-center items-center bg-black border-2 border-5 text-white flex z-20 rounded-md'>
+                    <div className='top-1/2 left-1/2 fixed z-10 backdrop-blur-sm flex justify-center items-center'>
+                    <div className='fixed  w-[44vw] h-[40vh] flex-col justify-center items-center bg-black border-2 border-5 text-white flex z-20 rounded-md'>
+        
                         <div className='flex-row  w-full pl-[100%] pb-16'>
-                            <X className='text-red-600 border-2 rounded-full'  onClick={()=>setvisible(false)}/>
+                            
                             </div>
+                            <div className='flex justify-end  w-[100%] pb-14'>
+                        <X className='text-red-600 border-2 rounded-full z-11'  onClick={()=>setvisible(false)}/>
+                        </div>
                         <p>Codewithabi-@admin login</p>
-                      <input className='m-5 rounded-md text-black' placeholder='ID'/>    
-                      <input className='m-5 rounded-md text-black' placeholder='PASSWORD'/> 
-                      <button className= 'rounded-md p-1 m-4 bg-green-600'>Login<Link to={'/admin'}>Admin</Link></button>             
+                      <input className='m-3 rounded-md text-black' placeholder='ID'/>    
+                      <input className='m-3 rounded-md text-black' placeholder='PASSWORD'/> 
+                      <button className= 'mb-20 rounded-md p-1 m-4 bg-green-600 p-2'><Link to={'/admin'}>Login</Link></button>             
                </div>
                </div>
                 )

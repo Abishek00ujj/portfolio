@@ -1,21 +1,27 @@
-import React from 'react'
+import React from 'react';
+import { Github } from 'lucide-react';
+
 export const Procomponent = (props) => {
   return (
-    <div className='pl-2 pr-2 w-[350px] h-[400px] ml-10 rounded-lg'>
-        <div className='border  w-[350px] h-[300px] rounded-lg'>
-            <img src={props.img} className='w-[100%] h-[100%] rounded-lg'/>
-        </div>
-        <div className=' flex-col font-serif text-white'>
-         <h1>{props.name}</h1>
-         <div className='flex font-serif'>
-         <h1>Git repository:</h1>
-         <a href={props.link} className='pl-3 text-orange-400'>Click</a>
-         </div>
-         {
-          props.Preview &&
-         (<p>Preview: <a href='' className='pl-3 text-orange-400'>Click</a></p>)
-         }
-        </div>
+    <div className="border-2 border-white bg-black rounded-lg p-4 flex flex-col justify-center items-center w-[350px] shadow-2xl shadow-white">
+      <div className="w-[320px] h-[180px]">
+        <img 
+          src={props.img} 
+          alt="Project Preview" 
+          className="object-cover w-full h-full rounded-lg" 
+        />
+      </div>
+      <div className="text-white text-center mt-4">
+        <p className="text-orange-400 text-sm font-semibold">props.name</p>
+        <h2 className="text-2xl font-bold mt-2">props.title</h2>
+      </div>
+      <div className="flex justify-center items-center mt-4">
+        <a 
+          href={props.githubLink} 
+          className="bg-white text-black flex items-center justify-center px-4 py-2 rounded-md font-semibold shadow-md hover:bg-gray-200">
+          View Project<Github className="mr-2" />
+        </a>
+      </div>
     </div>
-  )
-}
+  );
+};
