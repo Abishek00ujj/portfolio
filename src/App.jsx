@@ -1,16 +1,17 @@
-import { Home } from './pages/Home'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import { Projects } from './pages/Projects'
-import { Contact } from './pages/Contact'
-import { Error } from './pages/Error'
-import { Blogs } from './pages/Blogs'
-import { Admin } from './pages/Admin'
-import { Adminproject } from './pages/Adminproject'
-import { Adminblog } from './pages/Adminblog'
-function App() {
+import { Home } from './pages/Home';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { Projects } from './pages/Projects';
+import { Contact } from './pages/Contact';
+import { Error } from './pages/Error';
+import { Blogs } from './pages/Blogs';
+import { Admin } from './pages/Admin';
+import { Adminproject } from './pages/Adminproject';
+import { Adminblog } from './pages/Adminblog';
+import { AuthProvider } from './AuthContext';
 
+function App() {
   return (
-    <div>
+    <AuthProvider>
       <BrowserRouter>
         <Routes>
           <Route index path='/' element={<Home />} />
@@ -23,8 +24,8 @@ function App() {
           <Route path="/adminproject" element={<Adminproject />} />
         </Routes>
       </BrowserRouter>
-    </div>
-  )
+    </AuthProvider>
+  );
 }
 
-export default App
+export default App;

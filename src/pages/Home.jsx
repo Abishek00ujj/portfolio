@@ -42,7 +42,7 @@ export const Home = () => (
         </div>
       </div>
       <div className="w-full md:w-[30vw] flex justify-center items-center">
-        <img src={profile} className="rounded-full border-4 md:border-8 border-slate-400 w-32 h-32 md:w-48 md:h-48" />
+        <img src={profile} className="rounded-full border-4 md:border-8 border-slate-400 w-48 h-48 md:w-64 md:h-64" />
       </div>
     </div>
   </div>

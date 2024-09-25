@@ -1,8 +1,12 @@
+
 import React from 'react';
 import { Github, Trash } from 'lucide-react';
 import axios from 'axios';
+import { useAuth } from '../AuthContext';
 
 export const Procomponent = (props) => {
+  const { loggedIn } = useAuth();
+
   const handledelete = async (ide) => {
     const url = "https://66e527045cc7f9b6273c6d1d.mockapi.io/contact/";
     try {
@@ -40,7 +44,7 @@ export const Procomponent = (props) => {
           </a>
         </div>
         <div className="w-[50%] flex justify-end items-end">
-          {props.isLoggedIn && ( 
+          {loggedIn && ( 
             <Trash
               onClick={() => handledelete(props.id)}
               className="text-white cursor-pointer"
