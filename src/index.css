@@ -9,7 +9,8 @@
 }
 
 html {
-   background-image: url("C:\Users\abish\Desktop\MERN-TRAINING\portfolio\src\assets\img\bg.webp"
-      );
+   /* background-image: url("C:\Users\abish\Desktop\MERN-TRAINING\portfolio\src\assets\img\bg.webp"); */
+   background-image: url("./assets/img/bg.webp");
+   
    background-repeat: repeat;
 }

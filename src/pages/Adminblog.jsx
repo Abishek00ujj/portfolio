@@ -38,7 +38,7 @@ export const Adminblog = () => {
       <h1 className='text-4xl text-orange-400 font-serif '>Welcome Admin!</h1>
       <div className=''>
         <div className="flex flex-col items-center justify-center w-screen h-screen">
-          <form onSubmit={handleSubmit} className="flex flex-col items-center justify-center p-10 backdrop-blur-lg rounded-xl  border-2 border-orange text-white">
+          <form onSubmit={handleSubmit} className="flex flex-col items-center justify-center p-10 backdrop-blur-lg rounded-xl  border-2 border-orange text-black">
             <h3 className='font-serif text-black-400 text-2xl pb-10'>ADD-BLOGS</h3>
             <input required ref={titleref} className="border-2 border-solid border-purple-600 p-2.5 mb-10 rounded-md placeholder-slate-500" type="text" placeholder="TITLE" />
             <input required ref={bodyref} className="border-2 p-2.5 mb-10 rounded-md border-purple-600 placeholder-slate-500" type="text" placeholder="BODY" />
