@@ -3,13 +3,13 @@
 @tailwind utilities;
 
 
-*{
+* {
    padding: 0%;
    margin: 0%;
 }
-html{
-   background-image: url(
-"C:\Users\abish\Desktop\MERN-TRAINING\portfolio\src\assets\img\bg.webp"
-    );
-    background-repeat:repeat;
+
+html {
+   background-image: url("C:\Users\abish\Desktop\MERN-TRAINING\portfolio\src\assets\img\bg.webp"
+      );
+   background-repeat: repeat;
 }

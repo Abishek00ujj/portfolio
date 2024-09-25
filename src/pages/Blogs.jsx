@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios'; // Import axios
+import axios from 'axios';
+import { Loader } from 'lucide-react';
 import { Navbar } from '../components/Navbar';
-import Blogcomponent from '../components/Blogcomponent'; // Make sure to import your Blogcomponent
-
+import Blogcomponent from '../components/Blogcomponent';
+import { Suspense } from 'react';
 export const Blogs = (props) => {
   const url = "https://66e527045cc7f9b6273c6d1d.mockapi.io/Blogs";
   const [blogs, setBlogs] = useState([]);
@@ -10,7 +11,7 @@ export const Blogs = (props) => {
   const fetchData = async () => {
     try {
       const response = await axios.get(url);
-      if (response.status === 200) {
+      if (response.status === 200 || 201) {
         setBlogs(response.data);
       } else {
         alert("API error!");
@@ -28,17 +29,23 @@ export const Blogs = (props) => {
   return (
     <>
       <Navbar />
-      <div className='w-screen h-auto flex flex-col justify-center items-center'>
-        <h1 className='text-4xl text-[#f3ebeb] font-mono'>BLOGS</h1>
-        {blogs.map((item) => (
-          <Blogcomponent
-            key={item.id}
-            title={item.Title}
-            body={item.Body}
-            blog={item.Blog}
-          />
-        ))}
-      </div>
+      <>
+        <Suspense fallback={<Loader className='text-white' />}>
+          <div className='w-screen h-auto flex flex-col justify-center items-center'>
+            <h1 className='text-4xl text-orange-400 font-mono'>BLOGS</h1>
+            {blogs.map((item, index) => (
+              <Blogcomponent
+                id={item.id}
+                key={index}
+                title={item.Title}
+                body={item.Body}
+                blog={item.Blog}
+                fetchData={fetchData}
+              />
+            ))}
+          </div>
+        </Suspense>
+      </>
     </>
   );
 };
