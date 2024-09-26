@@ -15,7 +15,7 @@ export const Navbar = () => {
   const navigate = useNavigate(); 
 
   const id = "7"; 
-  const pass = "7"; 
+  const pass = "admin"; 
 
   const handleLogin = () => {
     if (idref.current.value === id && passref.current.value === pass) {
