@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Loader } from 'lucide-react';
 import { Navbar } from '../components/Navbar';
-import {BlogComponent} from '../components/Blogcomponent';
+import {Blogcomponent} from '../components/Blogcomponent';
 
 export const Blogs = () => {
   const url = "https://66e527045cc7f9b6273c6d1d.mockapi.io/Blogs";
@@ -38,7 +38,7 @@ export const Blogs = () => {
           <Loader className='text-white animate-spin' />
         ) : blogs.length > 0 ? (
           blogs.map((item) => (
-            <BlogComponent
+            <Blogcomponent
               key={item.id}
               title={item.Title}
               body={item.Body}

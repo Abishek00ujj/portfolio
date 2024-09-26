@@ -2,7 +2,7 @@ import React from 'react';
 import { Trash } from 'lucide-react';
 import axios from 'axios';
 import { useAuth } from '../AuthContext';
-const Blogcomponent = (props) => {
+export const Blogcomponent = (props) => {
   const { loggedIn } = useAuth();
 
   const handledelete = async (ide) => {
