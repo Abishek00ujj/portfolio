@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Loader } from 'lucide-react';
 import { Navbar } from '../components/Navbar';
-import {BlogComponent} from '../components/BlogComponent';
+import {BlogComponent} from '../components/Blogcomponent';
 
 export const Blogs = () => {
   const url = "https://66e527045cc7f9b6273c6d1d.mockapi.io/Blogs";
