@@ -14,6 +14,7 @@ export const Blogs = () => {
     try {
       const response = await axios.get(url);
       if (response.status === 200 || response.status === 201) {
+        console.log(response); 
         setBlogs(response.data);
       } else {
         console.error("API error: ", response.status);
@@ -39,12 +40,13 @@ export const Blogs = () => {
         ) : blogs.length > 0 ? (
           blogs.map((item) => (
             <Blogcomponent
-              key={item.id}
-              title={item.Title}
-              body={item.Body}
-              blog={item.Blog}
-              fetchData={fetchData}
-            />
+            key={item.id}
+            id={item.id} 
+            title={item.Title}
+            body={item.Body}
+            blog={item.Blog}
+            fetchData={fetchData}
+          />
           ))
         ) : (
           <p className="text-gray-600">No blogs available.</p>
