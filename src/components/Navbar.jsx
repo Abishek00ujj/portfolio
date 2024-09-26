@@ -29,6 +29,10 @@ export const Navbar = () => {
     }
   };
 
+  const handleSidebarLinkClick = () => {
+    setSidebarVisible(false);
+  };
+
   return (
     <>
       <div className="w-full h-[4rem] bg-slate-800 flex justify-between p-5 sticky top-0 z-10">
@@ -68,33 +72,23 @@ export const Navbar = () => {
         <div className="flex justify-end p-4">
           <X className="text-white w-8 h-8" onClick={() => setSidebarVisible(false)} />
         </div>
-        <ul className="text-white font-serif text-lg">
-          <li className="p-4 border-b border-slate-600 hover:bg-slate-700">
-            <Link to="/" onClick={() => setSidebarVisible(false)}>Home</Link>
-          </li>
-          <li className="p-4 border-b border-slate-600 hover:bg-slate-700">
-            <Link to="/projects" onClick={() => setSidebarVisible(false)}>Projects</Link>
-          </li>
-          <li className="p-4 border-b border-slate-600 hover:bg-slate-700">
-            <Link to="/blogs" onClick={() => setSidebarVisible(false)}>Blogs</Link>
-          </li>
-          <li className="p-4 border-b border-slate-600 hover:bg-slate-700">
-            <Link to="/contact" onClick={() => setSidebarVisible(false)}>Contact</Link>
-          </li>
-          <li className="p-4 border-b border-slate-600 hover:bg-slate-700">
-            <button className="w-full text-left" onClick={() => {
-              setSidebarVisible(false);
-              setVisible(true);
-            }}>
-              Admin Login
-            </button>
-          </li>
-        </ul>
+        <div className="text-white font-serif text-lg">
+          <Link to="/" onClick={handleSidebarLinkClick} className="block p-4 border-b border-slate-600 hover:bg-slate-700">Home</Link>
+          <Link to="/projects" onClick={handleSidebarLinkClick} className="block p-4 border-b border-slate-600 hover:bg-slate-700">Projects</Link>
+          <Link to="/blogs" onClick={handleSidebarLinkClick} className="block p-4 border-b border-slate-600 hover:bg-slate-700">Blogs</Link>
+          <Link to="/contact" onClick={handleSidebarLinkClick} className="block p-4 border-b border-slate-600 hover:bg-slate-700">Contact</Link>
+          <button className="w-full text-left p-4 border-b border-slate-600 hover:bg-slate-700" onClick={() => {
+            setSidebarVisible(false);
+            setVisible(true);
+          }}>
+            Admin Login
+          </button>
+        </div>
       </div>
       {visible && (
         <div className="fixed top-0 left-0 w-full h-full z-30 backdrop-blur-sm flex justify-center items-center">
           <div className="fixed w-[90vw] md:w-[44vw] h-[40vh] flex-col justify-center items-center bg-black border-2 text-white flex z-20 rounded-md">
-            <div className="flex justify-end w-[100%] p-4">
+            <div className="flex justify-end w-full p-4">
               <X className="text-red-600 border-2 rounded-full" onClick={() => setVisible(false)} />
             </div>
             <p>Codewithabi - Admin login</p>
