@@ -2,9 +2,9 @@ import React, { createContext, useContext, useState } from 'react';
 
 const AuthContext = createContext();
 
-export const AuthProvider = ({ children }) => {
+export const AuthProvider = ({ children }) => 
+  {
   const [loggedIn, setLoggedIn] = useState(false);
-
   return (
     <AuthContext.Provider value={{ loggedIn, setLoggedIn }}>
       {children}
