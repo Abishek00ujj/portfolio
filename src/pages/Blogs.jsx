@@ -36,7 +36,10 @@ export const Blogs = () => {
       <div className='w-screen h-auto flex flex-col justify-center items-center'>
         <h1 className='text-4xl text-orange-400 font-mono'>BLOGS</h1>
         {loading ? (
-          <Loader className='text-white animate-spin' />
+          <div className='w-screen h-screen flex justify-center items-center'>
+            <Loader className='text-white animate-spin ' />
+          </div>
+          
         ) : blogs.length > 0 ? (
           blogs.map((item) => (
             <Blogcomponent
