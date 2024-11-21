@@ -1,5 +1,5 @@
 import React from 'react'
-import errorImg from '../assets/img/errorImg.gif'
+import errorImg from '../assets/img/star.png'
 export const Error = () => {
   return (
     <>
