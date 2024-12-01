@@ -49,7 +49,7 @@ export const Procomponent = (props) => {
             target="_blank"
             rel="noopener noreferrer"
             className="bg-white text-black flex items-center justify-center px-4 py-2 rounded-md font-semibold shadow-md hover:bg-gray-200">
-            LIVE <Eye className="ml-2" />
+            LIVE <Eye className="ml-2" fill='orange' color='white' />
           </a>
         </div>
         {loggedIn && (
