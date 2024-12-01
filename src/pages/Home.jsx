@@ -4,13 +4,38 @@ import profile from '../assets/img/abidp2.jpg';
 import java from '../assets/img/java.png';
 import js from '../assets/img/java-script.png';
 import rea from '../assets/img/rea.png';
+import axios from 'axios';
 import sql from '../assets/img/sql.png';
 import git from '../assets/img/git.png';
 import Typewriter from "typewriter-effect";
 import { Github, Linkedin, Code } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { Procomponent } from '../components/Procomponent';
+import { Loader } from 'lucide-react';
 
 export const Home = () => {
+  const url = "https://66e527045cc7f9b6273c6d1d.mockapi.io/contact";
+  const [projects, setProjects] = useState([]);
+  const [loading, setLoading] = useState(true); 
+
+  const fetchData = async () => {
+    try {
+      const response = await axios.get(url);
+      if (response.status === 200 || response.status === 201) {
+        setProjects(response.data);
+      } else {
+        alert("API error!");
+      }
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    } finally {
+      setLoading(false); 
+    }
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
   const [progress, setProgress] = useState({
     java: 0,
     reactjs: 0,
@@ -48,7 +73,7 @@ export const Home = () => {
       }
     };
   }, []);
-
+  
   return (
     <div>
       <Navbar />
@@ -86,8 +111,11 @@ export const Home = () => {
           <img src={profile} className="rounded-full border-4 md:border-8 border-slate-400 w-48 h-48 md:w-64 md:h-64" />
         </div>
       </div>
-
-      <div className="flex justify-center items-center space-x-5 mt-10">
+      
+      <p align="center">
+     <img   src="https://leetcard.jacoblin.cool/abisheks123?theme=dark&font=Nunito&ext=heatmap" />  
+    </p>
+      <div className="flex justify-center items-center space-x-5 mt-10 mb-10">
         <Link to="/projects" className="relative inline-flex items-center justify-center w-36 h-12 py-3 px-6 overflow-hidden font-semibold text-indigo-600 transition-all duration-150 ease-in-out rounded hover:pl-10 hover:pr-6 bg-gray-50 group">
           <span className="absolute bottom-0 left-0 w-full h-1 transition-all duration-150 ease-in-out bg-indigo-600 group-hover:h-full"></span>
           <span className="relative w-full text-center transition-colors duration-200 ease-in-out group-hover:text-white">Projects</span>
@@ -98,7 +126,41 @@ export const Home = () => {
           <span className="relative w-full text-center transition-colors duration-200 ease-in-out group-hover:text-white">Blogs</span>
         </Link>
       </div>
-
+      <div className="backdrop-blur-sm">
+        <p className='text-orange-400 font-mono flex items-center justify-center text-4xl'>PROJECTS</p>
+        <div className='flex flex-col justify-center items-center'>
+          {loading ? (
+            <div className='w-screen h-screen flex justify-center items-center'>
+            <Loader className='text-white animate-spin ' />
+          </div>
+          ) : projects.length > 0 ? (
+            projects.map((item, index) => (
+              <Procomponent
+                id={item.id}
+                key={index}
+                title={item.Title}
+                description={item.Description}
+                coverlink={item.CoverLink}
+                gitlink={item.GitLink}
+                previewlink={item.Previewlink}
+                fetchData={fetchData}
+              />
+            ))
+          ) : (
+            <p className="text-gray-600">No projects available.</p> 
+          )}
+        </div>
+      </div>
+      <div>
+      <br/>
+     <br/>
+<div className='w-full h-full flex justify-center items-center flex-col space-y-5'>
+<h2 align="center" className='text-2xl text-white'>⚡ Current Stats ⚡</h2>
+  <img  src="https://streak-stats.demolab.com/?user=Abishek00ujj&count_private=true&theme=react&border_radius=10" alt="streak stats"/>
+  <img src="https://github-readme-stats.vercel.app/api?username=Abishek00ujj&show_icons=true&theme=react&rank_icon=github&border_radius=10" alt="readme stats" />
+  <img  align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Abishek00ujj&hide=HTML&langs_count=8&layout=compact&theme=react&border_radius=10&size_weight=0.5&count_weight=0.5&exclude_repo=github-readme-stats" alt="top langs" />
+</div>
+      </div>
       <div ref={skillsRef} className="mt-10 p-5 md:p-8 w-full md:w-[60%] mx-auto bg-slate-800 bg-opacity-70 backdrop-blur-lg rounded-lg">
         <h2 className="text-center text-white font-bold text-2xl mb-6">Skills</h2>
         <div className="space-y-4">
