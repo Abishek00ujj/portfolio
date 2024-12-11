@@ -13,7 +13,7 @@ export const Projects = () => {
     try {
       const response = await axios.get(url);
       if (response.status === 200 || response.status === 201) {
-        setProjects(response.data);
+        setProjects(response.data.reverse());
       } else {
         alert("API error!");
       }
