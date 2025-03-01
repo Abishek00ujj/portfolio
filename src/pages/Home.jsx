@@ -77,7 +77,7 @@ export const Home = () => {
   return (
     <div>
       <Navbar />
-      <div className="flex flex-col-reverse md:flex-row w-screen min-h-screen justify-center md:justify-between">
+      <div className="flex flex-col-reverse justify-center w-screen min-h-screen md:flex-row md:justify-between">
         <div className="w-full md:w-[50%] flex flex-col items-center justify-center">
           <div className="w-[80%] h-[20%] flex flex-col justify-center text-orange-400 font-bold text-3xl md:text-5xl m-5 md:m-10">
             <p>I am </p>
@@ -93,7 +93,7 @@ export const Home = () => {
             />
           </div>
           <div className="w-[85%] p-5 md:p-10 m-5 md:m-10 rounded-lg bg-slate-800 bg-opacity-80 backdrop-blur-lg">
-            <p className="text-white font-extralight text-sm md:text-base">
+            <p className="text-sm text-white font-extralight md:text-base">
               I'm Abishek, currently pursuing my B.Tech in Information Technology at Sri Shakthi Institute of Engineering
               and Technology. I am passionate about Java development and I am eagerly seeking professional internships to
               showcase my talents.
@@ -108,29 +108,29 @@ export const Home = () => {
           </div>
         </div>
         <div className="w-full md:w-[25vw] flex justify-center items-center">
-          <img src={profile} className="rounded-full border-4 md:border-8 border-slate-400 w-48 h-48 md:w-64 md:h-64" />
+          <img src={profile} className="border-4 rounded-full h-60 md:border-8 border-slate-400 w-60 md:w-80 md:h-80" />
         </div>
       </div>
       
       <p align="center">
      <img   src="https://leetcard.jacoblin.cool/abisheks123?theme=dark&font=Nunito&ext=heatmap" />  
     </p>
-      <div className="flex justify-center items-center space-x-5 mt-10 mb-10">
-        <Link to="/projects" className="relative inline-flex items-center justify-center w-36 h-12 py-3 px-6 overflow-hidden font-semibold text-indigo-600 transition-all duration-150 ease-in-out rounded hover:pl-10 hover:pr-6 bg-gray-50 group">
+      <div className="flex items-center justify-center mt-10 mb-10 space-x-5">
+        <Link to="/projects" className="relative inline-flex items-center justify-center h-12 px-6 py-3 overflow-hidden font-semibold text-indigo-600 transition-all duration-150 ease-in-out rounded w-36 hover:pl-10 hover:pr-6 bg-gray-50 group">
           <span className="absolute bottom-0 left-0 w-full h-1 transition-all duration-150 ease-in-out bg-indigo-600 group-hover:h-full"></span>
           <span className="relative w-full text-center transition-colors duration-200 ease-in-out group-hover:text-white">Projects</span>
         </Link>
 
-        <Link to="/blogs" className="relative inline-flex items-center justify-center w-36 h-12 py-3 px-6 overflow-hidden font-semibold text-indigo-600 transition-all duration-150 ease-in-out rounded hover:pl-10 hover:pr-6 bg-gray-50 group">
+        <Link to="/blogs" className="relative inline-flex items-center justify-center h-12 px-6 py-3 overflow-hidden font-semibold text-indigo-600 transition-all duration-150 ease-in-out rounded w-36 hover:pl-10 hover:pr-6 bg-gray-50 group">
           <span className="absolute bottom-0 left-0 w-full h-1 transition-all duration-150 ease-in-out bg-indigo-600 group-hover:h-full"></span>
           <span className="relative w-full text-center transition-colors duration-200 ease-in-out group-hover:text-white">Blogs</span>
         </Link>
       </div>
       <div className="backdrop-blur-sm">
-        <p className='text-orange-400 font-mono flex items-center justify-center text-4xl'>PROJECTS</p>
-        <div className='flex flex-col justify-center items-center'>
+        <p className='flex items-center justify-center font-mono text-4xl text-orange-400'>PROJECTS</p>
+        <div className='flex flex-col items-center justify-center'>
           {loading ? (
-            <div className='w-screen h-screen flex justify-center items-center'>
+            <div className='flex items-center justify-center w-screen h-screen'>
             <Loader className='text-white animate-spin ' />
           </div>
           ) : projects.length > 0 ? (
@@ -154,7 +154,7 @@ export const Home = () => {
       <div>
       <br/>
      <br/>
-<div className='w-full h-full flex justify-center items-center flex-col space-y-5'>
+<div className='flex flex-col items-center justify-center w-full h-full space-y-5'>
 <h2 align="center" className='text-2xl text-white'>⚡ Current Stats ⚡</h2>
   <img  src="https://streak-stats.demolab.com/?user=Abishek00ujj&count_private=true&theme=react&border_radius=10" alt="streak stats"/>
   <img src="https://github-readme-stats.vercel.app/api?username=Abishek00ujj&show_icons=true&theme=react&rank_icon=github&border_radius=10" alt="readme stats" />
@@ -162,7 +162,7 @@ export const Home = () => {
 </div>
       </div>
       <div ref={skillsRef} className="mt-10 p-5 md:p-8 w-full md:w-[60%] mx-auto bg-slate-800 bg-opacity-70 backdrop-blur-lg rounded-lg">
-        <h2 className="text-center text-white font-bold text-2xl mb-6">Skills</h2>
+        <h2 className="mb-6 text-2xl font-bold text-center text-white">Skills</h2>
         <div className="space-y-4">
           {[{ skill: "Java", percentage: progress.java },
             { skill: "ReactJS", percentage: progress.reactjs },
@@ -176,7 +176,7 @@ export const Home = () => {
                 <span className="text-white">{skill}</span>
                 <span className="text-white">{percentage}%</span>
               </div>
-              <div className="w-full bg-gray-200 rounded-full h-3 md:h-4 backdrop-blur-md bg-opacity-30">
+              <div className="w-full h-3 bg-gray-200 rounded-full md:h-4 backdrop-blur-md bg-opacity-30">
                 <div
                   className={`bg-orange-500 h-3 md:h-4 rounded-full transition-all duration-[2s] ease-in-out`}
                   style={{ width: `${percentage}%` }}
@@ -187,17 +187,17 @@ export const Home = () => {
         </div>
       </div>
 
-      <footer className="mt-10 p-4 bg-slate-900 text-white text-center">
+      <footer className="p-4 mt-10 text-center text-white bg-slate-900">
         <h3 className="mb-4 text-lg">Connect with Me</h3>
         <div className="flex justify-center space-x-6">
           <a href="https://leetcode.com/u/abisheks123/" target="_blank" rel="noopener noreferrer">
-            <Code className="w-8 h-8 hover:text-orange-400 transition duration-200" />
+            <Code className="w-8 h-8 transition duration-200 hover:text-orange-400" />
           </a>
           <a href="https://www.linkedin.com/in/abishek-s-336b612b9?fromQR=1 " target="_blank" rel="noopener noreferrer">
-            <Linkedin className="w-8 h-8 hover:text-blue-400 transition duration-200" />
+            <Linkedin className="w-8 h-8 transition duration-200 hover:text-blue-400" />
           </a>
           <a href="https://github.com/Abishek00ujj" target="_blank" rel="noopener noreferrer">
-            <Github className="w-8 h-8 hover:text-gray-400 transition duration-200" />
+            <Github className="w-8 h-8 transition duration-200 hover:text-gray-400" />
           </a>
         </div>
         <p className="mt-4 text-sm">&copy; 2024 Abishek. All rights reserved.<br/><p>Made with ❤ by Abishek</p></p>
